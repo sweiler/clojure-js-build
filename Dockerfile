@@ -9,4 +9,6 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt-get update
 RUN apt-get install -y google-chrome-stable
 
+RUN apt-get install -y sudo
+
 RUN useradd build -s /bin/bash -p '*'
