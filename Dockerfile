@@ -11,4 +11,5 @@ RUN apt-get install -y google-chrome-stable
 
 RUN apt-get install -y sudo
 
-RUN useradd build -s /bin/bash -p '*'
+RUN groupadd -r build && useradd -r -g build -G audio,video build \
+    && mkdir -p /home/build && chown -R build:build /home/build
